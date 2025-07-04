@@ -1,0 +1,26 @@
+module.exports = [
+    {
+        title: "Oppenheimer",
+        description: "A biographical drama about J. Robert Oppenheimer.",
+        genre: ["Biography", "Drama"],
+        language: ["English", "Hindi"],
+        duration: 180,
+        releaseDate: new Date("2023-07-21"),
+        posterUrl: "https://link-to-oppenheimer-poster.com",
+        trailerUrl: "https://youtube.com/oppenheimer",
+        cast: ["Cillian Murphy", "Emily Blunt", "Robert Downey Jr."],
+        director: "Christopher Nolan",
+    },
+    {
+        title: "Interstellar",
+        description: "A team of explorers travel through a wormhole in space.",
+        genre: ["Adventure", "Sci-Fi"],
+        language: ["English"],
+        duration: 169,
+        releaseDate: new Date("2014-11-07"),
+        posterUrl: "https://link-to-interstellar-poster.com",
+        trailerUrl: "https://youtube.com/interstellar",
+        cast: ["Matthew McConaughey", "Anne Hathaway"],
+        director: "Christopher Nolan",
+    },
+];

@@ -1,0 +1,115 @@
+
+📘 BookMyShow Clone - API Testing Guide (Text Format)
+
+====================================
+🔐 AUTH ROUTES
+====================================
+
+1. POST /api/auth/register
+   - Description: Register a new user
+   - Body (JSON):
+     {
+       "name": "John Doe",
+       "email": "john@example.com",
+       "phone": "8888888888",
+       "password": "user123"
+     }
+
+2. POST /api/auth/login
+   - Description: Login user
+   - Body (JSON):
+     {
+       "email": "john@example.com",
+       "password": "user123"
+     }
+   - Response: JWT token to use in Authorization header
+
+
+====================================
+👤 USER ROUTES (Protected)
+====================================
+
+3. GET /api/users/profile
+   - Headers:
+     Authorization: Bearer <JWT_TOKEN>
+   - Description: Get logged-in user profile
+
+
+====================================
+🎬 MOVIE ROUTES
+====================================
+
+4. GET /api/movies
+   - Description: List all movies
+
+5. GET /api/movies/:id
+   - Description: Get a single movie by ID
+   - Replace ":id" with a valid movie ID
+
+
+====================================
+🏟️ THEATER ROUTES
+====================================
+
+6. GET /api/theaters
+   - Description: List all theaters
+
+7. GET /api/theaters/city/:city
+   - Description: Get theaters by city
+   - Example: /api/theaters/city/Delhi
+
+
+====================================
+🖥️ SCREEN ROUTES (Optional)
+====================================
+
+8. GET /api/theaters/:id/screens
+   - Description: Get screens of a theater
+   - Replace ":id" with a valid theater ID
+
+
+====================================
+🎞️ SHOW ROUTES
+====================================
+
+9. GET /api/shows/movie/:movieId
+   - Description: Get shows for a movie
+
+10. GET /api/shows/theater/:theaterId
+    - Description: Get shows for a theater
+
+
+====================================
+🛒 BOOKING ROUTES (Protected)
+====================================
+
+11. POST /api/bookings
+    - Description: Book tickets for a show
+    - Headers:
+      Authorization: Bearer <JWT_TOKEN>
+    - Body (JSON):
+      {
+        "showId": "<show_id>",
+        "seats": ["A1", "A2"],
+        "totalAmount": 500,
+        "transactionId": "TXN102030"
+      }
+
+12. GET /api/bookings/my
+    - Description: View all your bookings
+    - Headers:
+      Authorization: Bearer <JWT_TOKEN>
+
+
+====================================
+📎 TICKET DOWNLOAD
+====================================
+
+13. GET /tickets/ticket-<bookingId>.pdf
+    - Description: Download PDF ticket for a booking
+
+
+✅ Tip:
+- Use Postman or Thunder Client to test each API
+- Add Authorization headers where needed
+
